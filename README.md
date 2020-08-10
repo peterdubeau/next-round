@@ -28,7 +28,7 @@
 
 ## MVP
 
-The **Next Round** MVP will allow a user to create a room with a randomly generated 4 character alphanumeric code. The creator becomes the admin and can create a task for that room. Users then give themselves a nickname, join that room and have their name added to the queue pool that has been created by the Admin. Once they have completed the tasks their names are moved from the queue and added to a completed list. Once all users have completed the task, all names will be put back into the queue. The Admin will be able to change the task, edit user info and be able to "close" or destroy the room. 
+The **Next Round** MVP will allow a user to create a room with a randomly generated 4 character alphanumeric code. The creator becomes the admin and can create a task for that room. Users then give themselves a nickname, join that room and have their name added to the "On The Hook" list. Once they have completed the task their names are moved from "On The Hook" to "Off The Hook." Once all users have completed the task, all names will be put back "On The Hook." The Admin will be able to edit the task, move users between "On" and "Off" the Hook . 
 
 <br>
 
@@ -37,7 +37,7 @@ The **Next Round** MVP will allow a user to create a room with a randomly genera
 - _Backend rails DB_
 - _Frontend react app_
 - _RESTful API connecting front end and backend_
-- _User generated room with unique roomcode_
+- _User generated room with unique room code_
 - _Admin with ability to create, update and delete list_
 - _User access to a room with ability to mark a task as completed_
 - _Live Deployment_
