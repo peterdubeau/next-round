@@ -39,7 +39,7 @@ class TasksController < ApplicationController
   end
 
   def add_user
-    @task = Task.find(params[:id])
+    @task = Task.find_by code: (params[:id])
     @user = User.find(params[:user_id])
 
     @task.users << @user
@@ -47,11 +47,29 @@ class TasksController < ApplicationController
     render json: @task, include: :users
   end
 
-  def show_users
-    @task = Task.find(params[:id])
-    @users = Task.find(params[:id]).users
+  def add_on_hooks
+    @task = Task.find_by code: (params[:code])
+    @on_hook = OnHook.find(params[:on_hook_id])
 
-    @task.users << @users
+    # @task.on_hook << @on_hook
+
+    render json: @task, include: :on_hook
+  end
+
+  def add_off_hooks
+    @task = Task.find_by code: (params[:code])
+    @off_hook = OffHook.find(params[:off_hook_id])
+
+    # @task.on_hook << @on_hook
+
+    render json: @task, include: :of_hook
+  end
+
+  def show_users
+    @task = Task.find_by code: (params[:code])
+    @users = @task.users
+
+    # @task.users << @users
 
     render json: @task, include: :users
   end

@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   resources :on_hooks
   resources :tasks
   post '/users/:id', to: 'users#create'
-  # post '/tasks/:id', to: 'tasks#create'
-  post '/users/:user_id/tasks/:id', to: 'tasks#add_user'
-  get '/tasks/:id/users', to: 'tasks#show_users'
+  post '/users/:user_id/tasks/:code', to: 'tasks#add_user'
+  post '/on_hooks/:on_hook_id/tasks/:code', to: 'tasks#add_on_hooks'
+  post '/off_hooks/:off_hook_id/tasks/:code', to: 'tasks#add_off_hooks'
+  get '/tasks/:code/users', to: 'tasks#show_users'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

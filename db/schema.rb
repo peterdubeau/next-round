@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_10_204730) do
+ActiveRecord::Schema.define(version: 2020_08_11_171439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_08_10_204730) do
   create_table "off_hooks", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.bigint "task_id", null: false
     t.index ["task_id"], name: "index_off_hooks_on_task_id"
     t.index ["user_id"], name: "index_off_hooks_on_user_id"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_08_10_204730) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "task_id", null: false
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.index ["task_id"], name: "index_on_hooks_on_task_id"
     t.index ["user_id"], name: "index_on_hooks_on_user_id"
   end
