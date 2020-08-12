@@ -51,7 +51,7 @@ class TasksController < ApplicationController
     @task = Task.find_by code: (params[:code])
     @on_hook = OnHook.find(params[:on_hook_id])
 
-    # @task.on_hook << @on_hook
+    @task.on_hook << @on_hook
 
     render json: @task, include: :on_hook
   end
@@ -62,7 +62,7 @@ class TasksController < ApplicationController
 
     # @task.on_hook << @on_hook
 
-    render json: @task, include: :of_hook
+    render json: @task, include: :off_hook
   end
 
   def show_users
@@ -71,6 +71,13 @@ class TasksController < ApplicationController
 
     # @task.users << @users
 
+    render json: @task, include: :users
+  end
+
+  def show_task_details
+    @task = Task.find_by code: (params[:code])
+    @users = @task.users
+    
     render json: @task, include: :users
   end
 

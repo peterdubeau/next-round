@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   post '/on_hooks/:on_hook_id/tasks/:code', to: 'tasks#add_on_hooks'
   post '/off_hooks/:off_hook_id/tasks/:code', to: 'tasks#add_off_hooks'
   get '/tasks/:code/users', to: 'tasks#show_users'
+  get '/tasks/:code/users/on_hooks', to: 'tasks#show_task_details'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
