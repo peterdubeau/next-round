@@ -1,34 +1,34 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import { postUser } from '../../services/users'
+import { postTask } from '../../services/tasks'
 
 
-function CreateRoom() {
+function CreateRoom(props) {
   const [formData, setFormData] = useState({
-    username: ""
+    userName: ""
   })
 
   const handleChange = (e) => {
-    const { name, value } = e.target
+    e.preventDefault()
+    const { value } = e.target
     setFormData({
-      [name]: value
+      userName: value,
+      isAdmin: true,
+      code: props.component
     })
   }
 
-  function generateCode() {
-    let code = ''
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    const charLength = characters.length
-    for (let i = 0; i < charLength; i++) {
-      code += characters.charAt(Math.floor(Math.random() * charLength))
-    }
-    return code.slice(0,4)
+  const handleSubmit = async () => {
+    const newTask = await postTask(formData.code)
+    // const newUser = await postUser(formData.userName)
   }
 
   return (
     <div>
-      <p>Room Code: {generateCode()}</p>
       <form>
+        <p>Room Code: {props.component}</p>
+        
         <label>
           Username:
           <input
@@ -38,7 +38,9 @@ function CreateRoom() {
             onChange={handleChange}
             />
         </label>
-        <Link to={`/task/${generateCode}`}> </Link>
+        <Link to={`/tasks/${props.component}`}>
+          <button onClick={handleSubmit}>Join Room</button>
+        </Link>
       </form>
     </div>
   )
