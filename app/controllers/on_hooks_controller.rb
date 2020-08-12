@@ -38,6 +38,15 @@ class OnHooksController < ApplicationController
     @on_hook.destroy
   end
 
+  def add_on_hooks
+    @task = Task.find_by code: (params[:code])
+    @on_hook = OnHook.find(params[:on_hook_id])
+
+    # @task.on_hook << @on_hook
+
+    render json: @task, include: :on_hook
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_on_hook

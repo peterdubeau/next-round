@@ -38,6 +38,15 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
+  def add_user_to_on_hooks
+    @user = User.find(params[:id])
+    @on_hooks = Task.find(params[:id]).on_hook
+
+    @on_hooks.users << @user
+
+    render json: @on_hooks, include: :users
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

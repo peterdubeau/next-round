@@ -38,6 +38,15 @@ class OffHooksController < ApplicationController
     @off_hook.destroy
   end
 
+  def add_off_hooks
+    @task = Task.find_by code: (params[:code])
+    @off_hook = OffHook.find(params[:off_hook_id])
+
+    # @task.on_hook << @on_hook
+
+    render json: @task, include: :off_hook
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_off_hook

@@ -47,24 +47,6 @@ class TasksController < ApplicationController
     render json: @task, include: :users
   end
 
-  def add_on_hooks
-    @task = Task.find_by code: (params[:code])
-    @on_hook = OnHook.find(params[:on_hook_id])
-
-    @task.on_hook << @on_hook
-
-    render json: @task, include: :on_hook
-  end
-
-  def add_off_hooks
-    @task = Task.find_by code: (params[:code])
-    @off_hook = OffHook.find(params[:off_hook_id])
-
-    # @task.on_hook << @on_hook
-
-    render json: @task, include: :off_hook
-  end
-
   def show_users
     @task = Task.find_by code: (params[:code])
     @users = @task.users
@@ -76,9 +58,11 @@ class TasksController < ApplicationController
 
   def show_task_details
     @task = Task.find_by code: (params[:code])
-    @users = @task.users
+    @on_hook = @task.on_hook
     
-    render json: @task, include: :users
+     
+
+    render json: @task, include: :on_hook
   end
 
   private
