@@ -26,6 +26,6 @@ function App() {
       </Route>
     </>
   );
-}
+} 
 
 export default App;

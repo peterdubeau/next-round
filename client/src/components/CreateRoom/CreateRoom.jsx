@@ -3,10 +3,10 @@ import { withRouter, Link } from 'react-router-dom'
 import { postUser } from '../../services/users'
 import { postTask } from '../../services/tasks'
 
-
+ 
 function CreateRoom(props) {
   const [formData, setFormData] = useState({
-    userName: ""
+    username: ""
   })
 
   const handleChange = (e) => {
@@ -19,8 +19,8 @@ function CreateRoom(props) {
   }
 
   const handleSubmit = async () => {
-    const newTask = await postTask(props.component)
-    // const newUser = await postUser(formData.userName)
+    const newTask = await postTask({code: props.component})
+    const newUser = await postUser({ username: formData.userName})
   }
 
   return (
