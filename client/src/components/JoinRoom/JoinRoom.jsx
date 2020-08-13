@@ -2,18 +2,19 @@ import React, { useState} from 'react'
 import {Link } from 'react-router-dom'
 import { postUser } from '../../services/users'
 import { getTasks } from '../../services/tasks'
+import CreateUser from '../CreateUser/CreateUser'
 
 export default function JoinRoom() {
 
   const [formData, setFormData] = useState({
     username: '',
-    code: ''
+    code: '',
+    isAdmin: ''
   })
 
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData({
-      ...formData,
       [name]: value,
       isAdmin: false
     })
@@ -44,19 +45,11 @@ export default function JoinRoom() {
               />
         </label>  
 
-        <label>
-          Username:
-          <input
-              type="text"
-              name="username"
-              value={formData.username}
-              onChange={handleChange}
-              />
-        </label> 
+        <CreateUser 
+          code={formData.code}
+          admin={formData.isAdmin}
+        />
 
-        <Link to={`/tasks/${formData.code}`}>
-          <button onClick={handleSubmit}>Join Room</button>
-        </Link>
       </form>
     </>
   )

@@ -1,17 +1,35 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { withRouter, Link } from 'react-router-dom'
+import { postUser } from '../../services/users'
+import { postTask, getTasks } from '../../services/tasks'
 
-export default function CreateUser() {
+export default function CreateUser(props) {
+
+  const [formData, setFormData] = useState({
+    username: "",
+    isAdmin: false,
+    code: ''
+  })
+
+  const handleChange = (e) => {
+    e.preventDefault()
+    const { value } = e.target
+    setFormData({
+      username: value,
+      isAdmin: false
+    })
+  }
 
   const handleSubmit = async () => {
-    const newTask = await postTask({ code: props.component })
+    const newTask = await postTask({ code: props.code })
    
     const findId = await getTasks()
-    let roomId = findId.filter(id => id.code === props.component)[0].id
+    let roomId = findId.filter(id => id.code === props.code)[0].id
     console.log(roomId)
     const addUser = await postUser({
       username: formData.username,
       task_id: roomId,
-      is_admin: formData.isAdmin
+      is_admin: props.admin
     })
   }
 
@@ -25,8 +43,8 @@ export default function CreateUser() {
             onChange={handleChange}
       />
     </label>
-        <Link to={`/tasks/${props.component}`}>
-          <button onClick={handleSubmit}>Join Room</button>
-    </Link>
+        <Link to={`/tasks/${props.code}`}>
+          <button onClick={handleSubmit}>Enter Room</button>
+        </Link>
    </>)
 }

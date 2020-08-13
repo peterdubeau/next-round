@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import { postUser } from '../../services/users'
 import { postTask, getTasks } from '../../services/tasks'
+import CreateUser from '../CreateUser/CreateUser'
 
  
 function CreateRoom(props) {
   const [formData, setFormData] = useState({
-    username: ""
+    username: "",
+    isAdmin: true
   })
 
   const handleChange = (e) => {
@@ -14,7 +16,7 @@ function CreateRoom(props) {
     const { value } = e.target
     setFormData({
       username: value,
-      isAdmin: true
+      isAdmin: true,
     })
   }
 
@@ -31,23 +33,13 @@ function CreateRoom(props) {
     })
   }
 
+  console.log(props.component)
+
   return (
     <div>
       <form>
         <p>Room Code: {props.component}</p>
-        
-        <label>
-          Username:
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-            />
-        </label>
-        <Link to={`/tasks/${props.component}`}>
-          <button onClick={handleSubmit}>Join Room</button>
-        </Link>
+        <CreateUser code={props.component} admin={formData.isAdmin} />
       </form>
     </div>
   )
