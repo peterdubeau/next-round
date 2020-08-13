@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter, Link } from 'react-router-dom'
-import { createAdmin } from '../../services/users'
+import { postUser } from '../../services/users'
 import { postTask, getTasks } from '../../services/tasks'
 
  
@@ -24,7 +24,7 @@ function CreateRoom(props) {
     const findId = await getTasks()
     let roomId = findId.filter(id => id.code === props.component)[0].id
     console.log(roomId)
-    const addUser = await createAdmin({
+    const addUser = await postUser({
       username: formData.username,
       task_id: roomId,
       is_admin: formData.isAdmin

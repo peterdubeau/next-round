@@ -19,8 +19,6 @@ export default function JoinRoom() {
     })
   }
 
-
-
   const handleSubmit = async () => {
     const findId = await getTasks(formData.code)
     let roomId = findId.filter(id => id.code === formData.code)[0].id
