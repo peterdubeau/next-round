@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  code: MyString
+  user: one
+  off_hook: one
+  on_hook: one
+
+two:
+  name: MyString
+  code: MyString
+  user: two
+  off_hook: two
+  on_hook: two
