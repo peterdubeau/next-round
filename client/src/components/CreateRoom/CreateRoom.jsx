@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 import { postUser } from '../../services/users'
-import { postTask } from '../../services/tasks'
+import { postTask, getTasks } from '../../services/tasks'
 
  
 function CreateRoom(props) {
@@ -19,8 +19,12 @@ function CreateRoom(props) {
   }
 
   const handleSubmit = async () => {
-    const newTask = await postTask({code: props.component})
-    const newUser = await postUser({ username: formData.userName})
+    const newTask = await postTask({ code: props.component })
+   
+    const findId = await getTasks()
+    let roomId = findId.filter(id => id.code === props.component)[0].id
+    console.log(roomId)
+    // const addUser = await postUser({user: formData.username})
   }
 
   return (
