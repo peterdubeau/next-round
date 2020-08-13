@@ -7,7 +7,6 @@ export const readTask = async (code) => {
 
 export const postTask = async (taskData) => {
   const res = await api.post('/tasks', { task: taskData })
-  debugger
   return res.data
 }
 

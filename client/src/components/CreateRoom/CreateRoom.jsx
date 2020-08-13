@@ -14,13 +14,12 @@ function CreateRoom(props) {
     const { value } = e.target
     setFormData({
       userName: value,
-      isAdmin: true,
-      code: props.component
+      isAdmin: true
     })
   }
 
   const handleSubmit = async () => {
-    const newTask = await postTask(formData.code)
+    const newTask = await postTask(props.component)
     // const newUser = await postUser(formData.userName)
   }
 
@@ -39,7 +38,7 @@ function CreateRoom(props) {
             />
         </label>
         <Link to={`/tasks/${props.component}`}>
-          <button onClick={handleSubmit}>Join Room</button>
+          <button onClick={handleChange}>Join Room</button>
         </Link>
       </form>
     </div>
