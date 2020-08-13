@@ -38,7 +38,7 @@ function CreateRoom(props) {
             />
         </label>
         <Link to={`/tasks/${props.component}`}>
-          <button onClick={handleChange}>Join Room</button>
+          <button onClick={handleSubmit}>Join Room</button>
         </Link>
       </form>
     </div>
