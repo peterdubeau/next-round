@@ -13,7 +13,7 @@ function CreateRoom(props) {
     e.preventDefault()
     const { value } = e.target
     setFormData({
-      userName: value,
+      username: value,
       isAdmin: true
     })
   }
@@ -24,7 +24,11 @@ function CreateRoom(props) {
     const findId = await getTasks()
     let roomId = findId.filter(id => id.code === props.component)[0].id
     console.log(roomId)
-    // const addUser = await postUser({user: formData.username})
+    const addUser = await postUser({
+      username: formData.username,
+      task_id: roomId,
+      is_admin: formData.isAdmin
+    })
   }
 
   return (
