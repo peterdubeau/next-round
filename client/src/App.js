@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Home from './components/Home/Home'
 import CreateRoom from './components/CreateRoom/CreateRoom';
+import JoinRoom from './components/JoinRoom/JoinRoom'
 import {Route} from 'react-router-dom'
 
 function generateCode() {
@@ -22,7 +23,10 @@ function App() {
         <Home />
       </Route>
       <Route path='/create-room'>
-        <CreateRoom path = '/create-room' component={generateCode()} exact />  
+        <CreateRoom component={generateCode()} exact />  
+      </Route>
+      <Route path='/join-room'>
+        <JoinRoom />  
       </Route>
     </>
   );
