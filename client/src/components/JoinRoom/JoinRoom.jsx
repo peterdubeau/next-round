@@ -1,7 +1,4 @@
 import React, { useState} from 'react'
-import {Link } from 'react-router-dom'
-import { postUser } from '../../services/users'
-import { getTasks } from '../../services/tasks'
 import CreateUser from '../CreateUser/CreateUser'
  
 export default function JoinRoom() {
@@ -19,19 +16,7 @@ export default function JoinRoom() {
       isAdmin: false
     })
   }
-
-  const handleSubmit = async () => {
-    const findId = await getTasks(formData.code)
-    let roomId = findId.filter(id => id.code === formData.code)[0].id
-    const newUser = await postUser({
-      username: formData.username,
-      task_id: roomId,
-      is_admin: formData.isAdmin
-    })
-
-  }
   
-
   return (
     <>
       <form>

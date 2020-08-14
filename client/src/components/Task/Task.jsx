@@ -5,7 +5,7 @@ import OnHook from '../OnHook/OnHook'
 import OffHook from '../OffHook/OffHook'
 import './Task.css'
 
-function Task(params) {
+function Task(params, props) {
   const initialState = {
   users: []
 }
@@ -17,14 +17,15 @@ function Task(params) {
     usersSetState({
       users: res.data.users
     })
-    // return res.data.users
-    }
-    
+  }
+
   useEffect(() => {
      showUsers()
-},[])
+  }, [])
+  
+  console.log(props.name)
   return (<>
-    
+    Who is going to 
     <div className= "hook-list">
       <OnHook component={usersState.users} />
       <OffHook component={usersState.users} />

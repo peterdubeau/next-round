@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { withRouter, Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { postUser } from '../../services/users'
 import { postTask, getTasks } from '../../services/tasks'
 
