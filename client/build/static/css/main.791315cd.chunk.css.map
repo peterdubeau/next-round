@@ -1,0 +1,1 @@
+{"version":3,"sources":["App.css","Task.css"],"names":[],"mappings":"AAAA,KACE,iBACF,CCFA,WACE,YAAa,CACb,kBAAmB,CACnB,4BACF","file":"main.791315cd.chunk.css","sourcesContent":["body{\n  text-align: center;\n}",".hook-list{\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around;\n}"]}
