@@ -30,7 +30,7 @@ function App() {
       <Route path='/join-room'>
         <JoinRoom />  
       </Route>
-      <Route path={`/tasks/:code`}>
+      <Route path={`/tasks/:code/users/:name`}>
         <Task />  
       </Route>
     </>
