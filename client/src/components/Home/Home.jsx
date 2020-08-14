@@ -9,9 +9,9 @@ function Home(props) {
   
     const findId = await getTasks()
     let roomId = findId.filter(id => id.code === props.component)[0].id
+    console.log(roomId)
     const newHooks = await createHooks({ task_id: roomId })
-    console.log(newHooks.id)
-   
+    
   }
 
   return (

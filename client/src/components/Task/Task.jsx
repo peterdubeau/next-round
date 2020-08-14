@@ -23,7 +23,7 @@ function Task(params, props) {
      showUsers()
   }, [])
   
-  console.log(props.name)
+  // console.log(props.name)
   return (<>
     <div className= "hook-list">
       <OnHook component={usersState.users} />
