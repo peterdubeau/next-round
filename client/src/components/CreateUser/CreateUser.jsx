@@ -9,7 +9,7 @@ export default function CreateUser(props) {
   const [formData, setFormData] = useState({
     username: "",
     isAdmin: false,
-    code: '',
+    code: ''
   })
 
   const handleChange = (e) => {
@@ -27,8 +27,7 @@ export default function CreateUser(props) {
     const findId = await getTasks()
     let roomId = findId.filter(id => id.code === props.code)[0].id
     const newHooks = await createHooks({ task_id: roomId })
-    console.log(newHooks.id)
-    // let hooksId = newHooks.filter(id => id.roomId)[0].id
+    // console.log(newHooks.id)
     const addUser = await postUser({
       username: formData.username,
       task_id: roomId,
@@ -47,7 +46,7 @@ export default function CreateUser(props) {
             onChange={handleChange}
       />
     </label>
-        <Link to={`/tasks/${props.code}`}>
+        <Link to={`/tasks/${props.code}/users/${formData.username}`}>
           <button onClick={handleSubmit}>Enter Room</button>
         </Link>
    </>)

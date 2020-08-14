@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 import { getUsers } from '../../services/tasks'
 import OnHook from '../OnHook/OnHook'
 import OffHook from '../OffHook/OffHook'
+import CompleteTask from '../CompleteTask/CompleteTask'
 import './Task.css'
 
 function Task(params, props) {
@@ -23,11 +24,11 @@ function Task(params, props) {
      showUsers()
   }, [])
   
-  console.log(props.name)
   return (<>
     <div className= "hook-list">
       <OnHook component={usersState.users} />
       <OffHook component={usersState.users} />
+      <CompleteTask users={usersState.users}/>
     </div>
  </>)
 }
