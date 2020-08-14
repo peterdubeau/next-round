@@ -20,3 +20,7 @@ export const destroyTask = async (code) => {
   return res
 }
 
+export const getUsers = async (code) => {
+  const res = await api.get(`tasks/${code}/users`)
+  return res
+}
