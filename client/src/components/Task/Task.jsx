@@ -25,7 +25,6 @@ function Task(params, props) {
   
   console.log(props.name)
   return (<>
-    Who is going to 
     <div className= "hook-list">
       <OnHook component={usersState.users} />
       <OffHook component={usersState.users} />

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { postUser } from '../../services/users'
+import { createHooks } from '../../services/hooks'
 import { postTask, getTasks } from '../../services/tasks'
 
 export default function CreateUser(props) {
@@ -8,7 +9,7 @@ export default function CreateUser(props) {
   const [formData, setFormData] = useState({
     username: "",
     isAdmin: false,
-    code: ''
+    code: '',
   })
 
   const handleChange = (e) => {
@@ -22,14 +23,15 @@ export default function CreateUser(props) {
 
   const handleSubmit = async () => {
     const newTask = await postTask({ code: props.code })
-   
+  
     const findId = await getTasks()
     let roomId = findId.filter(id => id.code === props.code)[0].id
-    console.log(roomId)
+    const newHooks = await createHooks({task_id: roomId})
     const addUser = await postUser({
       username: formData.username,
       task_id: roomId,
-      is_admin: props.admin
+      is_admin: props.admin,
+      on_hook_id: roomId
     })
   }
 
