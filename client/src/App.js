@@ -22,10 +22,10 @@ function App() {
   return (
     <>
       <Route path="/" exact>
-        <Home />
+        <Home component={generateCode()}/>
       </Route>
-      <Route path='/create-room'>
-        <CreateRoom component={generateCode()}/>  
+      <Route path='/create-room/:code'>
+        <CreateRoom />  
       </Route>
       <Route path='/join-room'>
         <JoinRoom />  

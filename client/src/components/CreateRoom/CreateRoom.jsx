@@ -4,7 +4,7 @@ import CreateUser from '../CreateUser/CreateUser'
 import Task from '../Task/Task'
 
  
-function CreateRoom(props) {
+function CreateRoom(params) {
   const [formData, setFormData] = useState({
     username: "",
     name: "", //task name
@@ -27,7 +27,7 @@ function CreateRoom(props) {
   return (
     <div>
       <form>
-        <p>Room Code: {props.component}</p>
+        <p>Room Code: {params.match.params.code}</p>
         <label>
           Enter task: 
         <input
@@ -38,7 +38,7 @@ function CreateRoom(props) {
               onSubmit = {handleSubmit}
              />
         </label>
-          <CreateUser code={props.component} admin={formData.isAdmin} />
+          <CreateUser code={params.match.params.code} admin={formData.isAdmin} />
           <Task name={formData.name}/>
       </form>
     </div>
