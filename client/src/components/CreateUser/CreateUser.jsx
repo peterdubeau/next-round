@@ -27,7 +27,6 @@ export default function CreateUser(props) {
     const findId = await getTasks()
     let roomId = findId.filter(id => id.code === props.code)[0].id
     const newHooks = await createHooks({ task_id: roomId })
-    // console.log(newHooks.id)
     const addUser = await postUser({
       username: formData.username,
       task_id: roomId,

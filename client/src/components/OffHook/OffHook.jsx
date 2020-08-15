@@ -3,11 +3,6 @@ import { deleteUser } from '../../services/users'
 
 export default function OffHook(props) {
 
-  const removeUser = async (e) => {
-    console.log(e.target.id)
-    const remove = await deleteUser(e.target.id)
-  }
-
     let check = props.component.filter(status => status.off_hook_id)
     let id = props.component.filter(status => status.id)
     return (<>
@@ -15,7 +10,7 @@ export default function OffHook(props) {
         <h3>Off The Hook</h3>
         {check.map(thing =>
           <p>
-            {thing.username} <span className="edit-remove" id={thing.id} onClick={removeUser}>Remove</span>
+            {thing.username} <span className="edit-remove" id={thing.id} onClick={props.delete}>Remove</span>
           </p>)}
       </div>
     </>)

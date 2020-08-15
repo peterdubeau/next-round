@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { withRouter} from 'react-router-dom'
 import CreateUser from '../CreateUser/CreateUser'
 import Task from '../Task/Task'
 
@@ -20,10 +19,6 @@ function CreateRoom(props) {
     })
   }
 
-  const handleSubmit = () => {
-
-  }
-
   return (
     <div>
       <form>
@@ -35,7 +30,6 @@ function CreateRoom(props) {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              onSubmit = {handleSubmit}
              />
         </label>
           <CreateUser code={props.component} admin={formData.isAdmin} />
