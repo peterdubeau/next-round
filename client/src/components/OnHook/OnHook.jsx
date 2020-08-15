@@ -8,7 +8,7 @@ export default function OnHook(props) {
       <h3>On The Hook</h3>
       {check.map(thing =>
         <p>
-          {thing.username} <span className = "edit-remove">Remove | Move</span>
+          {thing.username} <span className = "edit-remove">Remove</span>
         </p>)}
     </div>
   </>)

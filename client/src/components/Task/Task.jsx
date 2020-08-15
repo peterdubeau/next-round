@@ -1,7 +1,7 @@
 import React, { useState, useEffect }from 'react'
 import { withRouter } from 'react-router-dom'
 import { getUsers } from '../../services/tasks'
-import { updateUser } from '../../services/users'
+import { updateUser, deleteUser } from '../../services/users'
 import OnHook from '../OnHook/OnHook'
 import OffHook from '../OffHook/OffHook'
 import './Task.css'
@@ -33,6 +33,8 @@ function Task(props) {
     
   }
 
+  
+
   if (button !== true) {
     return (<>
       <div className="hook-list">
@@ -49,6 +51,6 @@ function Task(props) {
       </div>
     </>)
   }
-}
 
+}
 export default withRouter(Task)

@@ -8,3 +8,7 @@ export const postUser = async (userData) => {
 export const updateUser = async (userData) => {
   const res = await api.put(`/users/${userData.id}`, {user: userData})
 }
+
+export const deleteUser = async (id) => {
+  const res = await api.delete(`/users/${id}`)
+}
