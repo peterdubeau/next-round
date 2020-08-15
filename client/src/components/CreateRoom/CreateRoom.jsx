@@ -45,4 +45,4 @@ function CreateRoom(props) {
   )
 }
 
-export default withRouter(CreateRoom)
+export default CreateRoom
