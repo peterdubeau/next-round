@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/tasks/:code/users', to: 'tasks#show_users'
   get '/tasks/:code/on_hooks', to: 'tasks#show_task_details'
   delete '/tasks/:code/users', to: 'tasks#destroy_test'
-  put 'task/:code/users', to: 'users#reset_hooks'
+  put 'tasks/:code/users', to: 'users#reset_hooks'
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

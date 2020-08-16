@@ -48,10 +48,14 @@ class UsersController < ApplicationController
   end
 
   def reset_hooks
-    @task = Task.find_by code: (params[:id])
-    @task.users.each do |user|
-      user.off_hook_id = nil
-    end
+    @task = Task.find_by code: (params[:code])
+    @user = User.where(task_id: @task.id)
+    
+  
+    @user.each do |i| 
+    i.update(off_hook_id: nil)
+      end
+    render json: @user, include: :off_hook_id
   end
 
   private
