@@ -88,7 +88,7 @@ function Task(props) {
         />
         <button onClick={onCompleteClick}>I did it!</button>
         {adminStatus === currentUser ? <button onClick={deleteRoom}>Delete Room</button> : ''}
-        <button onClick={reset}>reset list</button>
+        {adminStatus === currentUser ? <button onClick={reset}>reset list</button> : '' }
       </div>
     </>)
 
