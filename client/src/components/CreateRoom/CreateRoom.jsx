@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import CreateUser from '../CreateUser/CreateUser'
-import Task from '../Task/Task'
 
  
 function CreateRoom(props) {
@@ -33,7 +32,6 @@ function CreateRoom(props) {
              />
         </label>
           <CreateUser code={props.component} admin={formData.isAdmin} />
-          <Task name={formData.name}/>
       </form>
     </div>
   )

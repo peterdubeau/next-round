@@ -4,6 +4,7 @@ import Home from './components/Home/Home'
 import CreateRoom from './components/CreateRoom/CreateRoom';
 import JoinRoom from './components/JoinRoom/JoinRoom'
 import Task from './components/Task/Task'
+import Footer from './components/Shared/Footer/Footer'
 
 import { Route } from 'react-router-dom'
 
@@ -32,6 +33,9 @@ function App() {
       </Route>
       <Route path={`/tasks/:code/users/:name`}>
         <Task />
+      </Route>
+      <Route path='/tasks' >
+        <Footer code={generateCode()}/>
       </Route>
     </>
   );
