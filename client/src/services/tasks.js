@@ -15,8 +15,8 @@ export const postTask = async (taskData) => {
   return res.data
 }
 
-export const destroyTask = async (code) => {
-  const res = await api.delete(`tasks/${code}`)
+export const destroyTask = async (id) => {
+  const res = await api.delete(`tasks/${id}/users`)
   return res
 }
 

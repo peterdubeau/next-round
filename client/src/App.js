@@ -4,8 +4,9 @@ import Home from './components/Home/Home'
 import CreateRoom from './components/CreateRoom/CreateRoom';
 import JoinRoom from './components/JoinRoom/JoinRoom'
 import Task from './components/Task/Task'
-  
-import {Route} from 'react-router-dom'
+import Footer from './components/Shared/Footer/Footer'
+
+import { Route } from 'react-router-dom'
 
 function generateCode() {
   let code = ''
@@ -25,16 +26,19 @@ function App() {
         <Home />
       </Route>
       <Route path='/create-room'>
-        <CreateRoom component={generateCode()}/>  
+        <CreateRoom component={generateCode()} />
       </Route>
       <Route path='/join-room'>
-        <JoinRoom />  
+        <JoinRoom />
       </Route>
       <Route path={`/tasks/:code/users/:name`}>
-        <Task />  
+        <Task />
+      </Route>
+      <Route path='/tasks' >
+        <Footer code={generateCode()}/>
       </Route>
     </>
   );
-} 
+}
 
 export default App;
