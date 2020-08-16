@@ -39,6 +39,11 @@ class TasksController < ApplicationController
     @task.destroy
   end
 
+  def destroy_test
+    @task = Task.find_by code: (params[:code])
+    @task.destroy
+  end
+
   def add_user
     @task = Task.find_by code: (params[:code])
     @user = User.find(params[:user_id])
