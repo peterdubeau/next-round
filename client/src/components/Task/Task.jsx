@@ -1,6 +1,6 @@
 import React, { useState, useEffect }from 'react'
 import { withRouter } from 'react-router-dom'
-import { getUsers, destroyTask } from '../../services/tasks'
+import { getUsers, destroyTask, resetHooks } from '../../services/tasks'
 import { updateUser, deleteUser } from '../../services/users'
 import OnHook from '../OnHook/OnHook'
 import OffHook from '../OffHook/OffHook'
@@ -49,18 +49,46 @@ function Task(props) {
       const remove = await destroyTask(props.match.params.code)
       return remove
     }
+  
+    // Saving code for later. May use to reset Hooks.
+    // const reset = async () => {
+    //   const res = await resetHooks(props.match.params.code)
+    //   return res
+    // }
+  
+    const reset = async () => {
+      const hooks = await resetHooks({ code: props.match.params.code })
+          return hooks
+        }
+      
+    
+  
+  
+  
 
     let admin = users.filter(status => status.is_admin == true)
     let room = admin.map(name => name.task_id).toString()
     let adminStatus = admin.map(name => name.username).toString()
     let currentUser = props.match.params.name
-    console.log(props.match.params.code)
     return (<>
       <div className="hook-list">
-        <OnHook component={users} delete={removeUser} move={onCompleteClick} admin={adminStatus} user={currentUser} />
-        <OffHook component={users} delete={removeUser} admin={adminStatus} user={currentUser} move={adminMoveOn}/>
+        <OnHook
+          component={users}
+          delete={removeUser}
+          move={onCompleteClick}
+          admin={adminStatus}
+          user={currentUser}
+        />
+        <OffHook
+          component={users}
+          delete={removeUser}
+          admin={adminStatus}
+          user={currentUser}
+          move={adminMoveOn}
+        />
         <button onClick={onCompleteClick}>I did it!</button>
         {adminStatus === currentUser ? <button onClick={deleteRoom}>Delete Room</button> : ''}
+        {adminStatus === currentUser ? <button onClick={reset}>reset list</button> : '' }
       </div>
     </>)
 

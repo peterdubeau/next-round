@@ -47,6 +47,17 @@ class UsersController < ApplicationController
     render json: @on_hooks, include: :users
   end
 
+  def reset_hooks
+    @task = Task.find_by code: (params[:code])
+    @user = User.where(task_id: @task.id)
+    
+  
+    @user.each do |i| 
+    i.update(off_hook_id: nil)
+      end
+    render json: @user, include: :off_hook_id
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

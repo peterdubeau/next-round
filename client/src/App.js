@@ -34,8 +34,8 @@ function App() {
       <Route path={`/tasks/:code/users/:name`}>
         <Task />
       </Route>
-      <Route path='/tasks' >
-        <Footer code={generateCode()}/>
+      <Route path='/tasks/:code' >
+        <Footer />
       </Route>
     </>
   );
