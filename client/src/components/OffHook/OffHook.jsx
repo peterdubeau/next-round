@@ -1,15 +1,14 @@
-import React from 'react'
-import { updateUser } from '../../services/users'
+import React, {useEffect} from 'react'
+
 
 export default function OffHook(props) {
-    
-
     let check = props.component.filter(status => status.off_hook_id)
     let id = props.component.filter(status => status.id)
+
     if (props.admin === props.user) {
       return (<>
         <div className='off-hook-list'>
-          <h3>On The Hook</h3>
+          <h3>Off The Hook</h3>
           {check.map(thing =>
             <p>
               {thing.username}

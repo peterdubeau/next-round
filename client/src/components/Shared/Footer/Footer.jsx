@@ -1,9 +1,12 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 
-export default function Footer(props) {
+function Footer(props) {
   return (
     <div>
-      Room Code: {props.code}
+      Room Code: {props.match.params.code}
     </div>
   )
 }
+
+export default withRouter(Footer)

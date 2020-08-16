@@ -24,3 +24,7 @@ export const getUsers = async (code) => {
   const res = await api.get(`tasks/${code}/users`)
   return res
 }
+
+export const resetHooks = async (code) => {
+  const res = await api.put(`tasks/${code}/users`)
+}
