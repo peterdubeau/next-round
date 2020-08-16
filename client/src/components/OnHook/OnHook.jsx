@@ -11,8 +11,7 @@ export default function OnHook(props) {
         {check.map(thing =>
           <p>
             {thing.username}
-            <span className="edit-remove" id={thing.id} onClick={props.delete}> Remove</span> | 
-            <span className="edit-remove" id={thing.id} onClick={props.delete}> Move</span>
+            <span className="edit-remove" id={thing.id} onClick={props.delete}> Remove</span>
           </p>)} 
       </div>
     </>)

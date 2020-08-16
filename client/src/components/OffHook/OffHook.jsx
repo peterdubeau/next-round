@@ -2,10 +2,6 @@ import React from 'react'
 import { updateUser } from '../../services/users'
 
 export default function OffHook(props) {
-
-    const move = async (e) => {
-      const remove = await updateUser(e.target.id)
-    }
     
 
     let check = props.component.filter(status => status.off_hook_id)
@@ -18,7 +14,7 @@ export default function OffHook(props) {
             <p>
               {thing.username}
               <span className="edit-remove" id={thing.id} onClick={props.delete}> Remove</span> |
-              <span className="edit-remove" id={thing.id} onClick={move}> Move</span>
+              <span className="edit-remove" id={thing.id} onClick={props.move}> Move</span>
             </p>)}
         </div>
       </>)
