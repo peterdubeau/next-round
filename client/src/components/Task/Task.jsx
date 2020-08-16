@@ -46,7 +46,7 @@ function Task(props) {
     }
 
     const deleteRoom = async () => {
-      const remove = await destroyTask(room)
+      const remove = await destroyTask(props.match.params.code)
       return remove
     }
 
