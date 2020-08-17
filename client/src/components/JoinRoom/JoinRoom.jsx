@@ -1,6 +1,7 @@
 import React, { useState} from 'react'
 import CreateUser from '../CreateUser/CreateUser'
- 
+import './JoinRoom.css'
+
 export default function JoinRoom() {
 
   const [formData, setFormData] = useState({
@@ -18,24 +19,22 @@ export default function JoinRoom() {
   }
   
   return (
-    <>
-      <form>
+      <form className ="details">
         <label>
-          Room Code:
           <input
               type="text"
               name="code"
               value={formData.code}
               onChange={handleChange}
+              placeholder = "Room Code"
               />
         </label>  
-
-        <CreateUser 
-          code={formData.code}
-          admin={formData.isAdmin}
-        />
-
+        <div className='create-user'>
+          <CreateUser 
+            code={formData.code}
+            admin={formData.isAdmin}
+          />
+        </div>
       </form>
-    </>
   )
 }
