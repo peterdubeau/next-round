@@ -65,7 +65,7 @@ class TasksController < ApplicationController
   def show_task_details
     @task = Task.find_by code: (params[:code])
     @on_hook = @task.on_hook
-    
+  
 
     render json: @task, include: :on_hook
   end

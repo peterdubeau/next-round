@@ -36,7 +36,7 @@ function Task(props) {
           off_hook_id: user.on_hook_id
         })
       } else {
-        alert('You have been booted by the host!')
+        alert(`You have been booted by the host! Don't worry! You can use the room code to join again!`)
       }
     
     }
@@ -49,28 +49,17 @@ function Task(props) {
       const remove = await destroyTask(props.match.params.code)
       return remove
     }
-  
-    // Saving code for later. May use to reset Hooks.
-    // const reset = async () => {
-    //   const res = await resetHooks(props.match.params.code)
-    //   return res
-    // }
-  
+
     const reset = async () => {
       const hooks = await resetHooks({ code: props.match.params.code })
           return hooks
         }
-      
-    
   
-  
-  
-
     let admin = users.filter(status => status.is_admin == true)
     let room = admin.map(name => name.task_id).toString()
     let adminStatus = admin.map(name => name.username).toString()
     let currentUser = props.match.params.name
-    return (<>
+    return (
       <div className="hook-list">
         <OnHook
           component={users}
@@ -88,10 +77,10 @@ function Task(props) {
         />
         <button onClick={onCompleteClick}>I did it!</button>
         {adminStatus === currentUser ? <button onClick={deleteRoom}>Delete Room</button> : ''}
-        {adminStatus === currentUser ? <button onClick={reset}>reset list</button> : '' }
+        {adminStatus === currentUser ? <button onClick={reset}>reset list</button> : ''}
+        <footer>Room Code: {props.match.params.code}</footer>
       </div>
-    </>)
-
+    )
   }
 
 
