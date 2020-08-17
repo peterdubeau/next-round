@@ -36,7 +36,7 @@ export default function CreateUser(props) {
     })
   }
 
-  return (<div className="username">
+  return (<div className="create-user">
     <label name="username">
       <input
             type="text"

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React  from 'react'
 import '../OnHook/OnHook.css'
 
 
@@ -8,8 +8,8 @@ export default function OffHook(props) {
 
     if (props.admin === props.user) {
       return (<>
-        <div className='off-hook-list'>
-          <h3>Off The Hook</h3>
+        <div className='hook'>
+          <h3>Off The Hook:</h3>
           {check.map(thing =>
             <p className="username">
               {thing.username}
@@ -23,8 +23,8 @@ export default function OffHook(props) {
       </>)
     } else {
         return (<>
-          <div className='off-hook-list'>
-            <h3>Off The Hook</h3>
+          <div className='hook'>
+            <h3>Off The Hook:</h3>
             {check.map(thing =>
               <p className="username">
                 {thing.username}

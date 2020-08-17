@@ -59,7 +59,8 @@ function Task(props) {
     let room = admin.map(name => name.task_id).toString()
     let adminStatus = admin.map(name => name.username).toString()
     let currentUser = props.match.params.name
-    return (
+    return (<>
+      <button onClick={onCompleteClick}>I did it!</button>
       <div className="hook-list">
         <OnHook
           component={users}
@@ -75,12 +76,11 @@ function Task(props) {
           user={currentUser}
           move={adminMoveOn}
         />
-        <button onClick={onCompleteClick}>I did it!</button>
         {adminStatus === currentUser ? <button onClick={deleteRoom}>Delete Room</button> : ''}
         {adminStatus === currentUser ? <button onClick={reset}>reset list</button> : ''}
         <footer>Room Code: {props.match.params.code}</footer>
       </div>
-    )
+    </>)
   }
 
 
