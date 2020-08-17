@@ -1,4 +1,5 @@
 import React from 'react'
+import './OnHook.css'
 
 export default function OnHook(props) {
 
@@ -6,10 +7,10 @@ export default function OnHook(props) {
   
   if (props.admin === props.user) {
     return (<>
-      <div className='off-hook-list'>
-        <h3>On The Hook</h3>
+      <div className='hook-list'>
+        <h3 className="hook">On The Hook:</h3>
         {check.map(thing =>
-          <p>
+          <p className="username">
             {thing.username}
             <span className="edit-remove" id={thing.id} onClick={props.delete}> Remove</span>
           </p>)} 
@@ -17,10 +18,10 @@ export default function OnHook(props) {
     </>)
   } else {
       return (<>
-        <div className='off-hook-list'>
-          <h3>On The Hook</h3>
+        <div className='hook'>
+          <h3>On The Hook:</h3>
           {check.map(thing =>
-            <p>
+            <p className ="username">
               {thing.username}
             </p>)}
         </div>

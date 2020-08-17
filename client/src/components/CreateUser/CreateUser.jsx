@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { postUser } from '../../services/users'
 import { createHooks } from '../../services/hooks'
 import { postTask, getTasks } from '../../services/tasks'
+import './CreateUser.css'
 
 export default function CreateUser(props) {
 
@@ -35,18 +36,18 @@ export default function CreateUser(props) {
     })
   }
 
-  return (<>
-    <label>
-       Username:
+  return (<div className="create-user">
+    <label name="username">
       <input
             type="text"
             name="username"
             value={formData.username}
-            onChange={handleChange}
+          onChange={handleChange}
+          placeholder = "Username"
       />
     </label>
         <Link to={`/tasks/${props.code}/users/${formData.username}`}>
           <button onClick={handleSubmit}>Enter Room</button>
         </Link>
-   </>)
+   </div>)
 }

@@ -4,7 +4,9 @@ import Home from './components/Home/Home'
 import CreateRoom from './components/CreateRoom/CreateRoom';
 import JoinRoom from './components/JoinRoom/JoinRoom'
 import Task from './components/Task/Task'
-import Footer from './components/Shared/Footer/Footer'
+import Layout from './components/Shared/Layout/Layout'
+
+
 
 import { Route } from 'react-router-dom'
 
@@ -17,16 +19,17 @@ function generateCode() {
   }
   return code.slice(0, 5)
 }
-
+const roomCode = generateCode()
 
 function App() {
   return (
-    <>
+    
+    <Layout code={roomCode}>
       <Route path="/" exact>
         <Home />
       </Route>
       <Route path='/create-room'>
-        <CreateRoom component={generateCode()} />
+        <CreateRoom component={roomCode} />
       </Route>
       <Route path='/join-room'>
         <JoinRoom />
@@ -34,10 +37,7 @@ function App() {
       <Route path={`/tasks/:code/users/:name`}>
         <Task />
       </Route>
-      <Route path='/tasks/:code' >
-        <Footer />
-      </Route>
-    </>
+  </Layout>
   );
 }
 

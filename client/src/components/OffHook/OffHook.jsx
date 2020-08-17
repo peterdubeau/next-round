@@ -1,4 +1,5 @@
-import React, {useEffect} from 'react'
+import React  from 'react'
+import '../OnHook/OnHook.css'
 
 
 export default function OffHook(props) {
@@ -7,22 +8,25 @@ export default function OffHook(props) {
 
     if (props.admin === props.user) {
       return (<>
-        <div className='off-hook-list'>
-          <h3>Off The Hook</h3>
+        <div className='hook'>
+          <h3>Off The Hook:</h3>
           {check.map(thing =>
-            <p>
+            <p className="username">
               {thing.username}
-              <span className="edit-remove" id={thing.id} onClick={props.delete}> Remove</span> |
-              <span className="edit-remove" id={thing.id} onClick={props.move}> Move</span>
+              <div className="edit-remove">
+                <span id={thing.id} onClick={props.delete}> Remove</span> |
+                <span id={thing.id} onClick={props.move}> Move</span>
+              </div>
+              
             </p>)}
         </div>
       </>)
     } else {
         return (<>
-          <div className='off-hook-list'>
-            <h3>On The Hook</h3>
+          <div className='hook'>
+            <h3>Off The Hook:</h3>
             {check.map(thing =>
-              <p>
+              <p className="username">
                 {thing.username}
               </p>)}
           </div>
