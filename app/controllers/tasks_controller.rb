@@ -54,6 +54,7 @@ class TasksController < ApplicationController
   end
 
   def show_users
+    sleep 0.2
     @task = Task.find_by code: (params[:code])
     @users = @task.users
 
