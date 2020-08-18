@@ -37,11 +37,12 @@ export default function CreateUser(props) {
   }
 
   return (<div className="create-user">
-    <label name="username">
-      <input
-            type="text"
-            name="username"
-            value={formData.username}
+    <label >
+      <input 
+          name="username"
+          type="text"
+          name="username"
+          value={formData.username}
           onChange={handleChange}
           placeholder = "Username"
       />
