@@ -24,7 +24,7 @@ export default function JoinRoom() {
           <input
               type="text"
               name="code"
-              value={formData.code}
+              value={formData.code.toUpperCase()}
               onChange={handleChange}
               placeholder = "Room Code"
               />

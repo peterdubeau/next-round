@@ -37,6 +37,7 @@ export default function CreateUser(props) {
   }
 
   return (<div className="create-user">
+    <form>
     <label >
       <input 
           name="username"
@@ -50,5 +51,6 @@ export default function CreateUser(props) {
         <Link to={`/tasks/${props.code}/users/${formData.username}`}>
           <button onClick={handleSubmit}>Enter Room</button>
         </Link>
-   </div>)
+    </form>
+  </div>)
 }
