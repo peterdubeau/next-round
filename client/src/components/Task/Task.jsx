@@ -6,8 +6,8 @@ import OnHook from '../OnHook/OnHook'
 import OffHook from '../OffHook/OffHook'
 import './Task.css'
 
-function Task(props) {
 
+function Task(props) {
   const [users, setUsers] = useState([])
 
   const showUsers = async () => {
@@ -37,6 +37,7 @@ function Task(props) {
         })
       } else {
         alert(`You have been booted by the host! Don't worry! You can use the room code to join again!`)
+
       }
     
     }

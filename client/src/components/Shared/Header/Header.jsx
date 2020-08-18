@@ -4,7 +4,7 @@ import './Header.css'
 
 export default function Header() {
   return (<div className="header">
-    <Link to="/"><p>Home</p></Link>
-    <h1>Next Round</h1>
+    <Link to="/"><p className="home">Home</p></Link>
+    <h1 className="title">Next Round</h1>
   </div>)
 }
