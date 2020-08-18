@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './Home.css'
 
 function Home(props) {
   console.log(props)
@@ -7,8 +8,8 @@ function Home(props) {
 
   return (
     <div>
-      <Link to='/create-room'><button>Create Room</button></Link>
-      <Link to='/join-room'><button>Join Room</button></Link>
+      <Link to='/create-room'><button className='button'>Create Room</button></Link>
+      <Link to='/join-room'><button className='button'>Join Room</button></Link>
     </div>
   )
 }

@@ -77,10 +77,13 @@ function Task(props) {
           user={currentUser}
           move={adminMoveOn}
         />
-        {adminStatus === currentUser ? <button onClick={deleteRoom}>Delete Room</button> : ''}
-        {adminStatus === currentUser ? <button onClick={reset}>reset list</button> : ''}
-        <footer>Room Code: {props.match.params.code}</footer>
       </div>
+      <div className="admin-button-container">
+        {adminStatus === currentUser ? <button className="admin-buttons" id="delete-room" onClick={deleteRoom}>Delete Room</button> : ''}
+        {adminStatus === currentUser ? <button className="admin-buttons" onClick={reset}>reset list</button> : ''}
+      </div>
+      <footer>Room Code: {props.match.params.code}</footer>
+      
     </>)
   }
 

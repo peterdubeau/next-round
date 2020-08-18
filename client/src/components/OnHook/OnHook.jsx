@@ -7,7 +7,7 @@ export default function OnHook(props) {
   
   if (props.admin === props.user) {
     return (<>
-      <div className='hook-list'>
+      <div className='hook'>
         <h3 className="hook">On The Hook:</h3>
         {check.map(thing =>
           <p className="username">

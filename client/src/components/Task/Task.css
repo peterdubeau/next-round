@@ -12,3 +12,19 @@
 button{
   width: 80%;
 }
+
+@media only screen and (min-width: 600px) {
+  .hook-list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .admin-button-container{
+    display: flex;
+  }
+
+  #delete-room{
+    background-color: red;
+  }
+}
