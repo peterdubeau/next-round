@@ -5,3 +5,14 @@ body{
   size: 100%;
 }
 
+@media only screen and (min-width: 600px) {
+  body{
+    background-color: black;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  body{
+    background-color: rgb(5, 48, 23);
+  }
+}

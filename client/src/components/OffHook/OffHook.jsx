@@ -1,8 +1,10 @@
-import React  from 'react'
+import React, {useState}  from 'react'
 import '../OnHook/OnHook.css'
 
 
 export default function OffHook(props) {
+  // const [offHook, setOffHook] = useState([])
+    
     let check = props.component.filter(status => status.off_hook_id)
     let id = props.component.filter(status => status.id)
 
@@ -17,7 +19,6 @@ export default function OffHook(props) {
                 <span id={thing.id} onClick={props.delete}> Remove</span> |
                 <span id={thing.id} onClick={props.move}> Move</span>
               </div>
-              
             </p>)}
         </div>
       </>)

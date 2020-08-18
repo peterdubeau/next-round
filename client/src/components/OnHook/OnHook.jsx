@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './OnHook.css'
 
 export default function OnHook(props) {
-
+  console.log(props.component.length)  
+      
   let check = props.component.filter(status => status.off_hook_id == null)
-  
+
   if (props.admin === props.user) {
     return (<>
-      <div className='hook-list'>
+      <div className='hook'>
         <h3 className="hook">On The Hook:</h3>
         {check.map(thing =>
           <p className="username">
