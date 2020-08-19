@@ -66,7 +66,7 @@ function Task(props) {
   let adminStatus = admin.map(name => name.username).toString()
   let currentUser = props.match.params.name
   return (<>
-    <button onClick={onCompleteClick}>I did it!</button>
+    <button onClick={onCompleteClick}>I presented!!</button>
       <div className="hook-list">
         <OnHook
           component={users}
