@@ -21,16 +21,6 @@ function CreateRoom(props) {
   return (
     <div>
       <form>
-        {/* <p>Room Code: {props.component}</p> */}
-        {/* <label>
-          Enter task: 
-        <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-             />
-        </label> */}
         <CreateUser code={props.component} admin={formData.isAdmin} />
       </form>
     </div>
