@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './OnHook.css'
 
 export default function OnHook(props) {
-  console.log(props.component.length)  
       
   let check = props.component.filter(status => status.off_hook_id == null)
 

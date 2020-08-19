@@ -13,8 +13,6 @@ function Task(props) {
   }, [])
   
   const [users, setUsers] = useState([])
-
-  console.log(props.match.params.code)
   
   const showUsers = async () => {
     const res = await getUsers(props.match.params.code)

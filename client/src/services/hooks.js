@@ -8,6 +8,5 @@ export const createHooks = async (taskId) => {
 
 export const getHooks = async (hookId) => {
   const on = await api.post(`on_hooks/${hookId}`)
-  // const off = await api.post(`off_hooks/${hookId}`)
   return on.data
 }
