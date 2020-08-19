@@ -18,7 +18,7 @@ function Home(props) {
       <p> Well, that’s it. I wish everybody the Best of luck, and can’t wait to see what you’re all doing in the future!</p>
       <p>-Pete</p>
       <p>P.S. Shay, What time are TA hours?</p>
-    </div>
+    </div>   
   )
 }
 
