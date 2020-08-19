@@ -39,6 +39,11 @@ class TasksController < ApplicationController
     @task.destroy
   end
 
+  def destroy_test
+    @task = Task.find_by code: (params[:code])
+    @task.destroy
+  end
+
   def add_user
     @task = Task.find_by code: (params[:code])
     @user = User.find(params[:user_id])
@@ -49,10 +54,9 @@ class TasksController < ApplicationController
   end
 
   def show_users
+    sleep 0.5
     @task = Task.find_by code: (params[:code])
     @users = @task.users
-
-    # @task.users << @users
 
     render json: @task, include: :users
   end
@@ -60,8 +64,7 @@ class TasksController < ApplicationController
   def show_task_details
     @task = Task.find_by code: (params[:code])
     @on_hook = @task.on_hook
-    
-     
+  
 
     render json: @task, include: :on_hook
   end
@@ -74,7 +77,6 @@ class TasksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def task_params
-      params.require(:task).permit(:name, :code)
-      # , :user_id, :off_hook_id, :on_hook_id)
+      params.require(:task).permit(:name, :code, :user_id, :off_hook_id, :on_hook_id)
     end
 end

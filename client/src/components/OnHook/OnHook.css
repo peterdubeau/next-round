@@ -1,0 +1,24 @@
+.edit-remove{
+  direction: flex;
+  justify-content: space-between;
+}
+
+.hook-list{
+  font-size: 40px;
+}
+
+.username{
+  font-size: 30px;
+  border: 2px solid gold;
+  border-radius: 20px;
+  margin: 10px auto;
+  padding: 30px;
+  min-width: 200px;
+}
+
+@media only screen and (min-width: 600px) {
+  .hook{
+    display: flex;
+    flex-direction: column;
+  }
+}

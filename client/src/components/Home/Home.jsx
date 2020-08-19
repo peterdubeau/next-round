@@ -1,16 +1,17 @@
 import React from 'react'
-import { withRouter, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import './Home.css'
 
-function Home() {
+function Home(props) {
+  console.log(props)
 
 
   return (
     <div>
-      <h1>Welcome to next round!</h1>
-      <Link to='/create-room'><button>Create Room</button></Link>
-      <Link to='/join-room'><button>Join Room</button></Link>
+      <Link to='/create-room'><button className='button'>Create Room</button></Link>
+      <Link to='/join-room'><button className='button'>Join Room</button></Link>
     </div>
   )
 }
 
-export default withRouter(Home)
+export default Home

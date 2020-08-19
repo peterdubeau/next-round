@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   post '/users/:user_id/tasks/:code', to: 'tasks#add_user'
   post '/on_hooks/:on_hook_id/tasks/:code', to: 'on_hooks#add_on_hooks'
   post '/off_hooks/:off_hook_id/tasks/:code', to: 'off_hooks#add_off_hooks'
-  # post '/users/:id/tasks/:code', to: 'users#add_user_to_on_hooks'
   get '/tasks/:code/users', to: 'tasks#show_users'
   get '/tasks/:code/on_hooks', to: 'tasks#show_task_details'
+  delete '/tasks/:code/users', to: 'tasks#destroy_test'
+  put 'tasks/:code/users', to: 'users#reset_hooks'
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

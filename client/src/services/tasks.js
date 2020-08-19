@@ -15,12 +15,17 @@ export const postTask = async (taskData) => {
   return res.data
 }
 
-export const destroyTask = async (code) => {
-  const res = await api.delete(`tasks/${code}`)
+export const destroyTask = async (id) => {
+  const res = await api.delete(`tasks/${id}/users`)
   return res
 }
 
 export const getUsers = async (code) => {
   const res = await api.get(`tasks/${code}/users`)
+  return res
+}
+
+export const resetHooks = async (codeData) => {
+  const res = await api.put(`tasks/${codeData.code}/users`, {code: codeData})
   return res
 }

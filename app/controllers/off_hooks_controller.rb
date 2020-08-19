@@ -42,8 +42,6 @@ class OffHooksController < ApplicationController
     @task = Task.find_by code: (params[:code])
     @off_hook = OffHook.find(params[:off_hook_id])
 
-    # @task.on_hook << @on_hook
-
     render json: @task, include: :off_hook
   end
 
