@@ -13,8 +13,6 @@ function Task(props) {
   }, [])
   
   const [users, setUsers] = useState([])
-
-  console.log(props.match.params.code)
   
   const showUsers = async () => {
     const res = await getUsers(props.match.params.code)
@@ -68,7 +66,8 @@ function Task(props) {
   let adminStatus = admin.map(name => name.username).toString()
   let currentUser = props.match.params.name
   return (<>
-    <button onClick={onCompleteClick}>I did it!</button>
+    <h1>Refresh your browser to see the updated list!</h1>
+    <button onClick={onCompleteClick}>I presented!!</button>
       <div className="hook-list">
         <OnHook
           component={users}

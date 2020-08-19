@@ -58,8 +58,6 @@ class TasksController < ApplicationController
     @task = Task.find_by code: (params[:code])
     @users = @task.users
 
-    # @task.users << @users
-
     render json: @task, include: :users
   end
 

@@ -1,17 +1,16 @@
-import React, {useState}  from 'react'
+import React from 'react'
 import '../OnHook/OnHook.css'
 
 
 export default function OffHook(props) {
-  // const [offHook, setOffHook] = useState([])
-    
+  
     let check = props.component.filter(status => status.off_hook_id)
     let id = props.component.filter(status => status.id)
 
     if (props.admin === props.user) {
       return (<>
         <div className='hook'>
-          <h3>Off The Hook:</h3>
+          <h3>Presented:</h3>
           {check.map(thing =>
             <p className="username">
               {thing.username}
@@ -25,7 +24,7 @@ export default function OffHook(props) {
     } else {
         return (<>
           <div className='hook'>
-            <h3>Off The Hook:</h3>
+            <h3>Presented:</h3>
             {check.map(thing =>
               <p className="username">
                 {thing.username}

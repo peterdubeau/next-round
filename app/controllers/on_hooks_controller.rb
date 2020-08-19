@@ -42,8 +42,6 @@ class OnHooksController < ApplicationController
     @task = Task.find_by code: (params[:code])
     @on_hook = OnHook.find(params[:on_hook_id])
 
-    # @task.on_hook << @on_hook
-
     render json: @task, include: :on_hook
   end
 

@@ -1,4 +1,21 @@
 button{
   border-radius: 50px;
-  box-shadow: 5px 10px
+  box-shadow: 5px 10px;
+}
+
+p{
+  font-size: 20px;
+}
+
+.button#create.button{
+  border-radius: 0px;
+  box-shadow: none;
+  background-color: rgba(0,0,0,1);
+  width: 1px;
+  height: 1px;
+  font-size: 1px;
+}
+
+#blurb{
+  font-size: 20px;
 }
