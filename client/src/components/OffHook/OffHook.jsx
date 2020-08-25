@@ -10,7 +10,7 @@ export default function OffHook(props) {
     if (props.admin === props.user) {
       return (<>
         <div className='hook'>
-          <h3>Presented:</h3>
+          <h3>Off the hook:</h3>
           {check.map(thing =>
             <p className="username">
               {thing.username}
@@ -24,7 +24,7 @@ export default function OffHook(props) {
     } else {
         return (<>
           <div className='hook'>
-            <h3>Presented:</h3>
+            <h3>Off the hook:</h3>
             {check.map(thing =>
               <p className="username">
                 {thing.username}

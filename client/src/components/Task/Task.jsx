@@ -67,7 +67,7 @@ function Task(props) {
   let currentUser = props.match.params.name
   return (<>
     <h1>Refresh your browser to see the updated list!</h1>
-    <button onClick={onCompleteClick}>I presented!!</button>
+    <button onClick={onCompleteClick}>Complete task</button>
       <div className="hook-list">
         <OnHook
           component={users}

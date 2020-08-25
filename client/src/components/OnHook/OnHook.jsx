@@ -8,7 +8,7 @@ export default function OnHook(props) {
   if (props.admin === props.user) {
     return (<>
       <div className='hook'>
-        <h3 className="hook">Did not present:</h3>
+        <h3 className="hook">On the hook:</h3>
         {check.map(thing =>
           <p className="username">
             {thing.username}
@@ -19,7 +19,7 @@ export default function OnHook(props) {
   } else {
       return (<>
         <div className='hook'>
-          <h3>Did not present:</h3>
+          <h3>On the hook:</h3>
           {check.map(thing =>
             <p className ="username">
               {thing.username}
