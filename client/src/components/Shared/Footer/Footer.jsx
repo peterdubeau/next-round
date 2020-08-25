@@ -1,11 +1,7 @@
 import React from 'react'
 import './Footer.css'
 
-<<<<<<< HEAD
- export default function Footer() {
-=======
 export default function Footer() {
->>>>>>> 0431f40b664b36bcf9103e9e3432027f3f835774
   return (
     <div>
       <ul className="footer">
@@ -17,9 +13,4 @@ export default function Footer() {
       </ul>
     </div>
   )
-<<<<<<< HEAD
 }
-
-=======
-}
->>>>>>> 0431f40b664b36bcf9103e9e3432027f3f835774

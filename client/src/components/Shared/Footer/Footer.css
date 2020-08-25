@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-=======
 .icon-container{
   display: flex;
 }
->>>>>>> 0431f40b664b36bcf9103e9e3432027f3f835774
 .contact{
   font-size: 20px;
 
@@ -26,15 +23,10 @@
   margin-left: 15px;
 }
 
-<<<<<<< HEAD
-.icon-container{
-  display: flex;
-=======
 #name{
   font-size:15px;
   margin-top: 40px;
   position: relative;
   bottom: 0;
   left: 0;
->>>>>>> 0431f40b664b36bcf9103e9e3432027f3f835774
 }
