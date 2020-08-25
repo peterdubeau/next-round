@@ -24,14 +24,14 @@ export default function JoinRoom() {
           <input
               type="text"
               name="code"
-              value={formData.code.toUpperCase()}
+              value={formData.code}
               onChange={handleChange}
               placeholder = "Room Code"
               />
         </label>  
         <div className='create-user'>
           <CreateUser 
-            code={formData.code}
+            code={formData.code.toUpperCase()}
             admin={formData.isAdmin}
           />
         </div>
