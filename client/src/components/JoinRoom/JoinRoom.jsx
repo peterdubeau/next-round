@@ -32,7 +32,7 @@ export default function JoinRoom() {
         <div className='create-user'>
           <CreateUser 
             code={formData.code.toUpperCase()}
-            admin={formData.isAdmin}
+            admin={formData.isAdmin}  
           />
         </div>
       </form>
