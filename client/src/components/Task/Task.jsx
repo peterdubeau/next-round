@@ -75,7 +75,7 @@ function Task(props) {
           move={onCompleteClick}
           admin={adminStatus}
           user={currentUser}
-        />
+        /> 
         <OffHook
           component={users}
           delete={removeUser}
