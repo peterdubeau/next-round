@@ -3,7 +3,13 @@
   justify-content: space-between;
 }
 
-.hook-list{
+.hook{
+  align-content: top;
+}
+
+div.hook-list{
+  display: flex;
+  align-items: start;
   font-size: 40px;
 }
 
