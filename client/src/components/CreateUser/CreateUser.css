@@ -26,7 +26,7 @@ input:-ms-input-placeholder { /* IE 10+ */
 input:-moz-placeholder { /* Firefox 18- */
   color: #C9CAD9;
 }
-
+  
 button{
   margin: 20px;
   font-size: 30px;
